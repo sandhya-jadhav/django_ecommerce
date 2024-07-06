@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'main' %}
+
+        <!-- main start-->
+        <div class="row mt-5 ml-5 mx-auto">
+            {% for x in products %}
+            <div class="col-md-6 mt-5">
+                <img src="{{x.pimage.url}}" width="100%" alt="" />
+
+            </div>
+            <div class="col-md-6 mt-5">
+                <div class="container">
+                <p class="custom-title tracking-2">Product Name &nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;{{x.name}}</p>
+                <p class="custom-title">Price &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;Rs.{{x.price}}</p>
+                {% if x.cat == 1 %}
+                <p class="custom-title">Category &nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;&nbsp;Mobile</p>
+                {% elif x.cat == 2 %}
+                <p class="custom-title">Category &nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;&nbsp;ShoesLaptop</p>
+                {% else %}
+                <p class="custom-title">Category &nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;&nbsp;Clothes</p>
+                {% endif %}
+                <p class="custom-title">Product Description &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;{{x.pdetails}}</p>
+                <br>
+                <a href="/addtocart/{{x.id}}"><button class="btn btn-custom">Add to Cart</button></a>&nbsp;&nbsp;
+                <a href="/viewcart"><button class="btn btn-custom">View Cart</button></a>&nbsp;&nbsp;
+                <a href="/"><button class="btn btn-custom">Shop More</button></a>
+                </div>
+                {% if success %}
+                <div class="alert alert-success">
+                    {{success}}
+                </div>
+                {% endif %}
+                {% if errmsg %}
+                <div class="alert alert-danger">
+                    {{errmsg}}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- main end-->
+
+{% endblock 'main' %}

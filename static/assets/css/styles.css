@@ -1,0 +1,96 @@
+.anchor {
+  text-decoration: none;
+}
+
+.text-1{
+  color:#f4853c;
+
+}
+.custom-container {
+    width: 600px; /* Set custom width */
+    background-color: #f4853c l;/* Set background color */
+    padding: 20px; /* Add padding for content */
+}
+
+/*  bg color */
+.btn-custom1 {
+  background-color: #f4853c;
+  color: #fbf9f9f6; /* Maintain text color */
+  font-weight: bold; /* Bold font weight */
+}
+
+/* Custom button color */
+.btn-custom {
+  background-color: #f4853c;
+  color: black;
+  font-weight: bold; /* Bold font weight */
+}
+
+/* Hover effect (optional) */
+.btn-custom:hover {
+  background-color: #0f0f0e; /* Change color on hover */
+  color: rgba(238, 229, 229, 0.963); /* Maintain text color */
+  font-weight: bold; /* Bold font weight */
+}
+
+/* Custom style for the animated line */
+.animated-line {
+  height: 2px;
+  background-color: #f4853c; /* Initial color */
+  position: relative;
+  animation: lineAnimation 2s infinite alternate; /* Animation */
+}
+/* Keyframes for the animation */
+@keyframes lineAnimation {
+  0% {
+    left: 0;
+    width: 0;
+    background-color: #f5f5f5;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+    background-color: #f4853c;
+  }
+  100% {
+    left: 100%;
+    width: 0;
+    background-color: #f5f5f5;
+  }
+}
+
+h5.custom-headline {
+  color: #f4853c; /* Text color */
+  /*font-weight: bold; /* Bold font weight */
+  text-shadow: 0 0 0.5px #ffffff; /* White outline */
+  font-family: "Arial", sans-serif; /* Custom font style */
+}
+
+/* Product Text */
+
+.custom-title {
+  color: rgb(248, 246, 246); /* Text color */
+  font-weight: bold; /* Bold font weight */
+  font-size: 18px; /* Font size */
+  transition: color 0.3s; /* Add smooth transition effect */
+  /* letter-spacing: 1px; */
+}
+
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.font-raleway {
+  font-family: "Raleway", sans-serif;
+}
+
+.f_img{
+  background-image: url("{% static 'assets/images/home_banner_1.png' %}");
+}
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+
+
+
+        <!-- cart start-->
+        <div class="row mt-4">
+            <div class="col-md-9">
+
+                <h5 class="btn-custom1 p-2 custom-container">Customer Details</h5>
+                {% for x in data %}
+                {% if forloop.counter == 1 %}
+                <p class="custom-title"><strong>Name:</strong>&nbsp;&nbsp;&nbsp;{{x.uid.username}}</p>
+                <p class="custom-title"><strong>Mobile:</strong>&nbsp;&nbsp;&nbsp;9898989898</p>
+                <p class="custom-title"><strong>Email:</strong>&nbsp;&nbsp;&nbsp;{{x.uid.email}}</p>
+                {% endif %}
+                {% endfor %}
+                <h5 class="btn-custom1 p-2 custom-container">Product Details</h5>
+                {% for x in data %}
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <img src="{{x.pid.pimage.url}}" width="100%" alt="" />
+                    </div>
+                    <div class="col-md-8">
+                        <p class="custom-title"><strong>Product Name:</strong>&nbsp;&nbsp;&nbsp;{{x.pid.name}}</p>
+                        <p class="custom-title"><strong>Price:</strong>&nbsp;&nbsp;&nbsp;Rs.{{x.pid.price}}</p>
+                        {% if x.pid.cat == 1 %}
+                        <p class="custom-title"><strong>Category:</strong>&nbsp;&nbsp;&nbsp;Mobile</p>
+                        {% elif x.pid.cat == 2 %}
+                        <p class="custom-title"><strong>Category:</strong>&nbsp;&nbsp;&nbsp;Shoes</p>
+                        {% else %}
+                        <p class="custom-title"><strong>Category:</strong>&nbsp;&nbsp;&nbsp;clothes</p>
+                        {% endif %}
+                        <p class="custom-title"><strong>Product Description:</strong>&nbsp;&nbsp;&nbsp;{{x.pid.pdetails}}</p>
+                        <p class="custom-title">
+                            <strong>QTY:</strong>
+                            <a href="/updateqty/0/{{x.id}}"><button class="btn btn-custom">-</button></a>
+                            <input type="number" value="{{x.qty}}">
+                            <a href="/updateqty/1/{{x.id}}"><button class="btn btn-custom">+</button></a>
+                        </p>
+                        <a href="/remove/{{x.id}}"><button class="btn btn-custom">Remove</button></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div><!-- customer and product details-->
+            
+            <div class="col-md-3">
+                <h5 class="btn-custom1 text-white p-2">Total Amount</h5>
+                <p class="custom-title"><strong>Total({{n}} items):</strong>Rs.{{total}}</p>
+                <hr>
+                <p class="custom-title"><strong>Total Amount:</strong>Rs.{{total}}</p>
+                <a href="/placeorder"><button class="btn btn-custom ">Place order</button></a>
+            </div><!-- Total amount section-->
+            
+        </div>
+        <!-- cart end-->
+{% endblock 'main' %}

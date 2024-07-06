@@ -1,0 +1,55 @@
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static "assets/css/styles.css" %}"> 
+
+    
+</head>
+<body  class="bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-5">
+                <a href="/" style="text-decoration: none; color: white">Home Page</a>
+            </div>
+            <div class="col-md-4 shadow mt-4 p-4 mx-auto bg-light">
+                <h2 class="text-center ">Login</h2>
+                {% if errmsg %}
+                    <div class="alert alert-danger">
+                        {{errmsg}}
+                    </div>
+                {% endif %}
+                <form method="POST" action="/login">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="input1" class="form-label"><strong>Username:</strong></label>
+                        <input type="email" name="uname" class="form-control" id="input1" placeholder="Enter Username">
+                    </div> <!-- username end-->
+                    <div class="mb-3">
+                        <label for="input2" class="form-label"><strong>Password:</strong></label>
+                        <input type="password" name="upass" class="form-control" id="input2" placeholder="Enter Password">
+                    </div><!-- password end-->
+                    
+                    <div class="mb-3" >
+                        <input type="submit" class="btn btn-custom" value="Login" />
+                        Not user? <a href="/register" style="text-decoration:None;">Register</a>
+                    </div><!-- submit button-->
+                    {% if success %}
+                        <div class="alert alert-success">
+                            {{success}}
+                        </div>
+                    {% endif %}
+                    </form>
+                
+
+            </div>
+        </div><!-- row div ends-->
+    </div><!-- container div ends-->
+    <script src="static/assets/js/bootstrap.min.js" ></script>
+</body>
+</html>

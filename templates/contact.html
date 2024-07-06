@@ -1,0 +1,208 @@
+{% extends 'base.html' %} {% load static %} {% block 'main' %}
+
+<style>
+  .address-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .address-column {
+    width: calc(50% - 10px); /* Adjust width as needed */
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .address-column h4 {
+    margin-top: 0;
+  }
+
+  .address-column::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent; /* Initial border color */
+    transition: all 0.3s ease; /* Transition for border and size change */
+    z-index: -1;
+  }
+
+  .address-column:hover::before {
+    width: calc(100% + 40px); /* Expand border width on hover */
+    height: calc(100% + 40px); /* Expand border height on hover */
+    border-color: #f4853c; /* Border color on hover */
+    top: -20px; /* Move the border up */
+    left: -20px; /* Move the border left */
+  }
+
+  .address-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .address-column {
+    width: calc(50% - 10px); /* Adjust width as needed */
+    {% comment %} background-color: rgb(92,92,92, o.5); {% endcomment %}
+    padding: 20px;
+    border: 2px solid transparent; /* Initial border */
+    position: relative;
+    transition: border-color 0.3s ease; /* Smooth transition for border color change */
+  }
+
+  .address-column:hover {
+    border-color: #f4853c; /* Border color on hover */
+  }
+
+  .address-column h4 {
+    margin-top: 0;
+  }
+
+  .address-column::before,
+  .address-column::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border: 2px solid transparent; /* Initial border color */
+    transition: width 0.3s ease; /* Animation for border */
+  }
+
+  .address-column::before {
+    border-left-color: #f4853c; /* Border color */
+  }
+
+  .address-column::after {
+    border-right-color: #f4853c; /* Border color */
+  }
+
+  .address-column:hover::before,
+  .address-column:hover::after {
+    width: calc(100% + 20px); /* Expand border width on hover */
+  }
+</style>
+
+<!-- Contact Us Section -->
+<section class="contact-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="contact-heading text-1">Contact Us</h2>
+        <p class="mb-5 mt-3 text-white">
+          Got any questions or inquiries? Feel free to reach out to us using the
+          contact form below.
+        </p>
+      </div>
+    </div>
+
+
+
+    <div class="address-container text-white m-4">
+      <div class="address-column bg-black bg-opacity-25 m-2">
+          <h4>Canbeera</h4>
+          <p>No: 49 C, East Lawrance Street,</p>
+          <p>Canberra, MD, Australia 1021</p>
+          <p class="text-white"><i class="bi bi-telephone-fill text-1 "></i> :&nbsp;&nbsp;&nbsp;000 - 123 - 456789</p>
+          <p class="text-white"><i class="bi bi-envelope text-1"></i></i> :&nbsp;&nbsp;&nbsp;info@example.com</p>
+          <p class="text-white"><i class="bi bi-clock-fill text-1"></i></i> :&nbsp;&nbsp;&nbsp;Mon-Fri: 8 AM - 5 PM</p>
+
+
+      </div>
+      <div class="address-column bg-black bg-opacity-25 m-2">
+        <h4>Mumbai</h4>
+        <p>No: 39 B, East Coast Street,</p>
+        <p>Mumbai, MD, India 2301</p>
+        <p class="text-white"><i class="bi bi-telephone-fill text-1 "></i> :&nbsp;&nbsp;&nbsp;+000 - 123 - 456789</p>
+        <p class="text-white"><i class="bi bi-envelope text-1"></i></i> :&nbsp;&nbsp;&nbsp;contact@example.com</p>
+        <p class="text-white"><i class="bi bi-clock-fill text-1"></i></i> :&nbsp;&nbsp;&nbsp;Mon-Fri: 8 AM - 6 PM</p>
+      </div>
+      <div class="address-column bg-black bg-opacity-25 m-2">
+        <h4>Kansas City</h4>
+        <p>No: 39 B, East Coast Street,</p>
+        <p>Baltimore, MD, USA 3023</p>
+        <p class="text-white"><i class="bi bi-telephone-fill text-1 "></i> :&nbsp;&nbsp;&nbsp;000 - 123 - 456789</p>
+        <p class="text-white"><i class="bi bi-envelope text-1"></i></i> :&nbsp;&nbsp;&nbsp;support@example.com</p>
+        <p class="text-white"><i class="bi bi-clock-fill text-1"></i></i> :&nbsp;&nbsp;&nbsp;Mon-Fri: 8 AM - 5 PM</p>
+      </div>
+      <div class="address-column bg-black bg-opacity-25 m-2">
+        <h4>Birmingham</h4>
+        <p>No: 45 B, East George Street,</p>
+        <p>Birmingham MD, UK 4304</p>
+        <p class="text-white"><i class="bi bi-telephone-fill text-1 "></i> :&nbsp;&nbsp;&nbsp;+000 - 123 - 456789</p>
+        <p class="text-white"><i class="bi bi-envelope text-1"></i></i> :&nbsp;&nbsp;&nbsp;info@example.com</p>
+        <p class="text-white"><i class="bi bi-clock-fill text-1"></i></i> :&nbsp;&nbsp;&nbsp;Mon-Fri: 8 AM - 6 PM</p>
+      </div>
+  </div>
+  
+    {% comment %} section 2 {% endcomment %}
+
+    <div class="container text-white mt-5">
+      <div class="row">
+          <div class="col-lg-12 mx-auto text-center">
+              <h1>Container Header</h1>
+          </div>
+      </div>
+      <div class="row mt-3">
+          <div class="col-lg-6">
+              <h3>Connect here</h3>
+
+                          <!-- Map container -->
+            <div id="map-container bg-light text-white">
+              
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d286991.77551263466!2d72.70779729904896!3d19.073109142194102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1713282952254!5m2!1sen!2sin"
+               width="600" 
+               height="400" 
+               style="border:0;" 
+               allowfullscreen="" 
+               loading="lazy" 
+               referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+          </div>
+
+
+
+
+          </div>
+          <div class="col-lg-6 text-center">
+              <h3>Contact Us</h3>
+
+               {% comment %} right section   {% endcomment %}
+          <div class="container mt-4">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <form class="contact-form">
+                  <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" />
+                  </div>
+                  <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" />
+                  </div>
+                  <div class="mb-3">
+                    <textarea
+                      class="form-control"
+                      rows="5"
+                      placeholder="Your Message"
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-custom">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          {% comment %} end form {% endcomment %}
+          </div>
+      </div>
+  </div>
+
+   
+
+
+</div>
+</section>
+
+{% endblock 'main' %}

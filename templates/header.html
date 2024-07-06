@@ -1,0 +1,85 @@
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estore|Home</title>
+     <link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><!-- for bootstrap icons-->
+    <link rel="stylesheet" href="{% static "assets/css/styles.css" %}"> 
+ 
+    <style>
+            /* Change navbar text color to white */
+            .nav .nav-link {
+                color: white !important;
+                font-size: 19px; /* Adjust font size as needed */
+                transition: color 0.3s; /* Add smooth transition effect */
+    
+            }
+
+            /* Hover effect */
+            .nav .nav-link:hover {
+                color: #F48841 !important; /* Change color on hover */
+            }
+
+    </style>
+    
+ 
+</head>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg ">
+                    <div class="container-fluid ">
+                        <a href="/" class="navbar-brand"><img style="width: 40%" src="{% static 'assets/images/bytez_logo_2.svg' %}" alt="logo"></i></a>
+
+                        {% comment %} <a class="navbar-brand" href="/">Estore</a> {% endcomment %}
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="nav justify-content-end text-white mb-2 mb-lg-0 ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home </a>
+                            
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home">product</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/viewcart">Cart</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li> 
+                        {% endif %}                       
+                        </ul>
+                      
+                    </div>
+                    </div>
+                </nav>
+            </div> <!-- Navigation bar end-->
+        </div><!-- navigation row div end-->
+        <!-- Header end-->
+
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>

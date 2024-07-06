@@ -1,0 +1,311 @@
+{% extends 'base.html' %} {% load static %} {% block 'main' %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estore|Home</title>
+     <link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><!-- for bootstrap icons-->
+    <link rel="stylesheet" href="{% static "assets/css/styles.css" %}"> 
+ 
+    <style>
+
+
+
+
+
+
+
+{% comment %} seconf part {% endcomment %}
+
+
+.container {
+    {% comment %} padding: 20px; {% endcomment %}
+}
+
+.content {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    {% comment %} text-align: justify; {% endcomment %}
+    {% comment %} letter-spacing: -0.5px;  {% endcomment %}
+    height: 400px
+}
+
+.content h3 {
+    color: #F4853C;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: -5%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.content:hover .overlay {
+    opacity: 0.4;
+}
+
+.content:hover {
+    border-left: 3px solid #f4853c;
+    border-right: 3px solid #f4853c;
+}
+{% comment %}  section 3 {% endcomment %}
+
+.square {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    transition: opacity 0.3s ease; 
+}
+.col:hover .square {
+    opacity: 0.8; 
+}
+
+.black-bg {
+    background-color: #000;
+}
+
+.grey-bg {
+    background-color: #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+  <body>
+    <div class="container-fluid mt-4 mb-4">
+      <div class="row">
+        <div class="col-md-12">
+          {% comment %}
+          <div class="row">
+            {% endcomment %}
+            <div
+              id="carouselExampleAutoplaying"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="{% static 'assets/images/home_banner_1.png' %}"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="{% static 'assets/images/home_banner_2.png' %}"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="{% static 'assets/images/home_banner_3.png' %}"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- second section -->
+
+   
+
+
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="content">
+                    <h3>Apple</h3>
+                    <p>Known for their sleek design and premium quality, Apple's MacBook series is popular among creatives and professionals for its performance and reliability.</p>
+                    <div class="overlay ">
+                        <img src="{% static 'assets/images/block_5.png' %}" alt="Image 1">
+
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="content">
+                    <h3 >Dell</h3>
+                    <p>wide range of laptops catering to various needs, from budget friendly options_to_high-performance machines.Their-XPS-series is particularly renowned for its build quality</p>
+                    <div class="overlay">
+                        <img src="{% static 'assets/images/block_5.png' %}" alt="Image 1">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="content">
+                    <h3>HP</h3>
+                    <p>HP produces a diverse range of laptops suitable for different user preferences and budgets.
+                       Their Spectre and Envy series are notable for their stylish designs</p>
+                    <div class="overlay">
+
+                        <img src="{% static 'assets/images/block_5.png' %}"  alt="Image 1">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="content">
+                    <h3>Lenovo</h3>
+                    <p> Lenovo is known for its reliable and durable ThinkPad series, which is favored by 
+                      business professionals for its robust build quality and excellent keyboard.</p>
+                    <div class="overlay">
+
+                        <img src="{% static 'assets/images/block_5.png' %}" alt="Image 1">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    {% comment %} SECTION 3 {% endcomment %}
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <!-- First column content -->
+                <img src="{% static 'assets/images/side_img_1.png' %}" class="img-fluid" style="height: 400px;" alt="Image">
+
+            </div>
+            <div class="col">
+                <!-- Second column content -->
+                <div class="row">
+                    <h2 class="text-white text-center my-3 p-3">Wonderful Laptops</h2>
+
+
+                    <div class="col">
+                        <!-- First row, first column -->
+                        <div class="square black-bg opacity-50 p-4">
+                            <h4>500+</h4>
+                            <p>New Arival</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- First row, second column -->
+                        <div class="square text-white transparent p-4">
+                            <h4>746+</h4>
+                            <p>New varity</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col ">
+                        <!-- Second row, first column -->
+                        <div class="square text-white transparent p-4">
+                            <h4>2000+</h4>
+                            <p>Old Laptop</p>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <!-- Second row, second column -->
+                        <div class="square black-bg opacity-50 p-4">
+                            <h4>200+</h4>
+                            <p>Best Product</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- Third column content -->
+                <img src="{% static 'assets/images/side_img_2.png' %}" class="img-fluid" style="height: 400px;" alt="Image">
+
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+{% endblock 'main' %}       
